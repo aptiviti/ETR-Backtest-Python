@@ -1,10 +1,13 @@
 # Parameters
 
-# Import File paths: please insert file paths between quotes.
+# Import File paths: please insert file paths between quotes, including the file extension (.csv).
 
-source_file = "INSERT_CLIENT_FILEPATH"  # ETRSource_Source
-spReturns_file = "INSERT_CLIENT_FILEPATH"  # ETRInsight_StockReturns
-ftecReturns_file = "INSERT_CLIENT_FILEPATH"  # ETRInsight_FTECReturns
+# ETRSource_Source
+source_file = "INSERT_CLIENT_FILEPATH"
+# ETRInsight_StockReturns
+spReturns_file = "INSERT_CLIENT_FILEPATH"
+# ETRInsight_FTECReturns
+ftecReturns_file = "INSERT_CLIENT_FILEPATH"
 
 # Adoption Rating, Increase Rating, Decrease Rating, Replacing Rating, Net Score Rating, Market Share Rating parameters
 mincitations = 30	 # Minimum citations to be considered for a rating

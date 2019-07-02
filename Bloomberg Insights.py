@@ -177,7 +177,7 @@ spend10 = spend10.rename(columns = {"variable":"Metric2", "value":"Value"})
 spend11 = spend10[pd.notna(spend10.Value)]
 spend11["Metric3"] = spend11["Metric"] + "_" + spend11["Metric2"]
 
-
+print(spend11)
 spend12 = pd.pivot_table(spend11, index = ['Survey_Description_1', 'Survey_ID', 'Survey_Launch', 'Survey_Close', 'Announcement_Date', 'Sector_Current', 'Vendor_Current', 'Product_Current', 'Symbol_ID_Current', 'Bloomberg_ID_Current', 'FIGI_ID_Current', 'Sector_Historical', 'Vendor_Historical', 'Product_Historical', 'Symbol_ID_Historical', 'Bloomberg_ID_Historical', 'FIGI_ID_Historical', 'Citations'], columns = ["Metric3"], values = ["Value"]).reset_index()
 
 final = []
@@ -885,6 +885,7 @@ InsightForecast_Final = forecast3.drop(["P_Positive", "Return_End", "Window_Star
 InsightPerformance_Final = forecast9
 
 # Final Datasets are objects of type pd.DataFrame. Please consult the pandas documentation (Online at http://pandas.pydata.org/pandas-docs/stable/) to export DataFrames to their desired format or output.
+
 
 print("InsightData_Final:")
 print(InsightData_Final)
