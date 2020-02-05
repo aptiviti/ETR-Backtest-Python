@@ -454,7 +454,7 @@ peer_final = peer13.sort_values(by = ["Survey_Description_1", "Survey_ID", "Surv
 # while the Control Group consists of all others.
 # Each vendor's Net Score and Citations are calculated among each of these customer groups.
 
-cloud1 = source1[source1["Sector_Current"] == "CLOUD COMPUTING"]
+cloud1 = source1[source1["Sector_Current"] == "CLOUD COMPUTING / MANAGED HOSTING"]
 cloud1 = cloud1[(cloud1["Vendor_Current"] == "AWS") | (cloud1["Vendor_Current"] == "Microsoft") | (cloud1["Vendor_Current"] == "Google")]
 cloud1 = cloud1[(cloud1["Metric"] == "ADOPTION") | (cloud1["Metric"] == "INCREASE")]
 cloud1 = cloud1.sort_values(by = ["Survey_Description_1", "Survey_ID", "Survey_Launch", "Survey_Close", "Announcement_Date", "Respondent_ID", "Sector_Current", "Vendor_Current", "Product_Current", "Symbol_ID_Current", "Bloomberg_ID_Current", "FIGI_ID_Current"])
@@ -591,7 +591,7 @@ def cloudratings(x):
     if x["Survey_Citations"] < 30 or x["Cloud_Citations"] < 5 or x["Cloud_Overlap"] < .4:
         x["Cloud_Rating"] = np.nan
 
-    if x["Sector_Current"] == "CLOUD COMPUTING" and (x["Vendor_Current"] == "AWS" or x["Vendor_Current"] == "Microsoft" or x["Vendor_Current"] == "Google"):
+    if x["Sector_Current"] == "CLOUD COMPUTING / MANAGED HOSTING" and (x["Vendor_Current"] == "AWS" or x["Vendor_Current"] == "Microsoft" or x["Vendor_Current"] == "Google"):
         x["Cloud_Rating"] = "Positive"
 
     return x
